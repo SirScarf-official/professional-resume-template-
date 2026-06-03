@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Seyed Mohammad Reza · Data Science Intern | Professional Resume</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f2f5;   /* gray background */
+      font-family: 'Inter', sans-serif;
+      color: #1e2a3a;        /* navy-black base */
+      line-height: 1.45;
+      padding: 2rem 1.5rem;
+    }
+
+    /* main resume card — navy/black */
+    .resume-card {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: all 0.2s ease;
+      border: 1px solid #e9edf2;
+    }
+
+    /* graphic */
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 2rem 2.5rem 1.5rem 2.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .intro h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0a1927;       /* near black */
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+    .intro .tagline {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2c5282;       /* deep navy blue */
+      margin-bottom: 0.6rem;
+      border-left: 4px solid #2c5282;
+      padding-left: 0.9rem;
+    }
+    .intro .bio {
+      color: #334155;        /* gray-slate */
+      font-size: 0.93rem;
+      max-width: 90%;
+      line-height: 1.5;
+    }
+
+    /* canvas container — navy/slate graphic */
+    .warm-graphic {
+      background: #f8fafc;
+      border-radius: 1.5rem;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.02), 0 8px 16px -10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 180px;
+      position: relative;
+      border: 1px solid #e2edf7;
+    }
+    canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: radial-gradient(circle at 30% 20%, #f1f5f9, #e9eef3);
+      border-radius: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* two column layout */
+    .resume-body {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 2rem;
+      padding: 2.2rem 2.5rem 2.5rem 2.5rem;
+    }
+
+    /* sections */
+    .main-content section {
+      margin-bottom: 2rem;
+    }
+    .section-title {
+      font-size: 1.28rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+      color: #1e3a5f;       /* navy */
+      letter-spacing: -0.2px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.4rem;
+    }
+    .section-title i {
+      font-size: 1.25rem;
+      color: #2c5282;
+    }
+    .project-item, .edu-item, .summary-text {
+      margin-bottom: 1.5rem;
+      border-left: 3px solid #cbd5e1;
+      padding-left: 1.1rem;
+      transition: all 0.2s;
+    }
+    .project-item:hover, .edu-item:hover {
+      border-left-color: #2c5282;
+    }
+    .project-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f172a;
+      margin-bottom: 0.2rem;
+    }
+    .project-links {
+      font-size: 0.7rem;
+      color: #4a6a8b;
+      margin-top: 0.2rem;
+      word-break: break-all;
+    }
+    .desc, .project-desc {
+      font-size: 0.85rem;
+      color: #334155;
+      margin-top: 0.4rem;
+      line-height: 1.45;
+    }
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+    .edu-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f172a;
+    }
+    .edu-meta {
+      font-weight: 500;
+      color: #4a6a8b;
+      font-size: 0.85rem;
+    }
+    .date {
+      font-size: 0.7rem;
+      color: #5b6e8c;
+      background: #f1f5f9;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+    }
+
+    /* right sidebar */
+    .sidebar {
+      background: #f9fbfd;
+      border-radius: 1.5rem;
+      padding: 1.6rem 1.6rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f6;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: #1e293b;
+      word-break: break-word;
+    }
+    .contact-item i {
+      width: 1.7rem;
+      color: #2c5282;
+      font-size: 1rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1.2rem;
+    }
+    .skill-tag {
+      background: #eef2ff;
+      padding: 0.35rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1e3a5f;
+      transition: 0.2s;
+      border: 1px solid #dce3ec;
+    }
+    .skill-tag:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+      color: #0f172a;
+    }
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+      font-size: 0.85rem;
+    }
+    .lang-name {
+      font-weight: 500;
+    }
+    .lang-level {
+      color: #5b6e8c;
+      font-size: 0.75rem;
+    }
+    hr {
+      margin: 1.2rem 0;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #cbd5e1, transparent);
+    }
+    .quote {
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #475569;
+      margin-top: 1rem;
+      text-align: center;
+      background: #f1f5f9;
+      padding: 0.6rem;
+      border-radius: 1.5rem;
+    }
+    .data-badge {
+      background: #eef2ff;
+      border-radius: 2rem;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      width: fit-content;
+      color: #1e3a5f;
+      font-weight: 500;
+    }
+    .reference-note {
+      text-align: center;
+      padding: 1rem 0 1.6rem;
+      font-size: 0.7rem;
+      color: #6c7e97;
+      border-top: 1px solid #e9edf2;
+      background: #ffffff;
+    }
+
+    @media (max-width: 850px) {
+      body { padding: 1rem; }
+      .hero-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      .resume-body {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1.8rem;
+      }
+      .intro h1 { font-size: 2rem; }
+      .warm-graphic { min-height: 150px; }
+      .intro .bio { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .edu-header { flex-direction: column; gap: 6px; }
+    }
+    a { text-decoration: none; color: inherit; }
+    .contact-item a:hover { color: #1e3a5f; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="resume-card">
+  <!-- professional -->
+  <div class="hero-section">
+    <div class="intro">
+      <h1>your first name<br>your last name</h1>
+      <div class="tagline">About you: short description</div>
+      <div class="bio">
+        you Professional description
+      </div>
+      <div class="data-badge">
+        <i class="fas fa-chart-line"></i> more data anything. like (program since 2020)
+      </div>
+    </div>
+    <div class="warm-graphic">
+      <img src=" /* gif link palce */" alt="Gif Or Image Place for design only" style="width: 600px; height: 400px; overflow: hidden;">
+    </div>
+  </div>
+
+  <!-- resume two columns -->
+  <div class="resume-body">
+    <!-- left column: summary, projects, education -->
+    <div class="main-content">
+      <section>
+        <div class="section-title">
+          <i class="fas fa-user-tie"></i>
+          <span>Profile summary</span>
+        </div>
+        <div class="summary-text">
+          <div class="desc" style="margin-top:0;">
+            your profile summary cna be here;
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <div class="section-title">
+          <i class="fas fa-code-branch"></i>
+          <span>featured projects (examples)</span>
+        </div>
+        <div class="project-item">
+          <div class="project-title">📊 Sales Data Visualization</div>
+          <div class="project-desc">Cleaned and analyzed sample sales data using Pandas & Matplotlib. Created insightful bar charts, line plots, and heatmaps to identify seasonal trends and product performance. Hosted on GitHub with Jupyter notebook.</div>
+          <div class="project-links"><i class="fab fa-github"></i> github.com/SirScarf-official/sales-viz</div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">🧮 Python Calculator (CLI)</div>
+          <div class="project-desc">Built a command-line calculator with arithmetic operations, memory functions, and error handling. Practiced functions, loops, and modular code structure.</div>
+          <div class="project-links"><i class="fab fa-github"></i> github.com/SirScarf-official/py-calc</div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">🌐 Personal Portfolio Page</div>
+          <div class="project-desc">Designed a responsive HTML/CSS portfolio from scratch showcasing skills, projects, and contact information. Applied modern layout techniques and professional color palette.</div>
+          <div class="project-links"><i class="fas fa-globe"></i> live preview available</div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <div class="section-title">
+          <i class="fas fa-graduation-cap"></i>
+          <span>education & certificates</span>
+        </div>
+        <div class="edu-item">
+          <div class="edu-header">
+            <span class="edu-title">Python Programming Certificate</span>
+            <span class="date">date</span>
+          </div>
+          <div class="edu-meta">name and title</div>
+          <div class="desc">description</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-header">
+            <span class="edu-title">Computer Engineering(example)</span>
+            <span class="date">date</span>
+          </div>
+          <div class="edu-meta">University</div>
+          <div class="desc">description</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- right sidebar: contact, skills, languages, tools -->
+    <div class="sidebar">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span><a href="tel:paste full number here">your number</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span><a href="mailto:mousavihedayati@gmail.com">your gmail</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-github"></i>
+        <span><a href="!!!!github link here!!!!" target="_blank">git hub source</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>location</span>
+      </div>
+
+      <hr>
+
+      <div class="section-title" style="margin-bottom: 0.7rem; border-bottom: none; padding-bottom: 0;">
+        <i class="fas fa-code"></i>
+        <span>technical skills</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+      </div>
+
+      <div class="section-title" style="margin-top: 1rem; border-bottom: none;">
+        <i class="fas fa-database"></i>
+        <span>data tools</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+      </div>
+
+      <div class="section-title" style="margin-top: 1rem; border-bottom: none;">
+        <i class="fas fa-globe"></i>
+        <span>languages</span>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">your language</span>
+        <span class="lang-level">Native</span>
+      </div>
+      <div class="lang-item">
+        <span class="lang-name">another language</span>
+        <span class="lang-level">how much you know</span>
+      </div>
+
+      <div class="section-title" style="margin-top: 1rem; border-bottom: none;">
+        <i class="fas fa-tools"></i>
+        <span>tools & platforms</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+        <span class="skill-tag">for example</span>
+      </div>
+
+      <hr>
+      <div class="quote">
+        <i class="fas fa-chart-simple"></i> “anything want write here”
+      </div>
+      <div style="font-size: 0.7rem; text-align: center; margin-top: 0.8rem; color: #4a6a8b;">
+        <i class="fas fa-brain"></i> anything want write her
+      </div>
+    </div>
+  </div>
+  <div class="reference-note">
+    <i class="fas fa-briefcase"></i> ✦ professional resume ✦ <i class="fas fa-chart-line"></i>
+    <i class="fas fa-briefcase"></i> ✦ Updated in 06/03/2026 ✦ enter your resume update time
+  </div>
+</div>
+
+</body>
+</html>
